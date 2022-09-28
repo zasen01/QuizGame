@@ -1,3 +1,5 @@
+
+//Array to hold Questions and Answers for Quiz
 var questions = [
     {
       title: "Commonly used data types DO NOT include:",
@@ -33,8 +35,10 @@ var questions = [
     }
   ];
 
+//Main variables for keeping Score time and current question
+
 var i=0
-var time =80
+var time =40
 var score =0
 
 document.getElementById("start").onclick =  function(){
@@ -54,7 +58,7 @@ function showTime(){
 
 function showQuestions(){
 
-    if(i<5){
+    if(i<5 && time >0){
 
         document.getElementById('questions').innerHTML=`
         <ul>
@@ -66,7 +70,6 @@ function showQuestions(){
         <button>${questions[i].choices[3]}</button>
         </ul>`
     }
-
 }
 
 document.getElementById('questions').onclick= function(e){
@@ -78,7 +81,7 @@ document.getElementById('questions').onclick= function(e){
         document.getElementById('check').innerHTML =`<h3>Wrong</h3>`;
         time -=10
     }
-score= time
+score = time
 document.getElementById('score').innerHTML=`<h3>${score}</h3>`
 i++
 showQuestions()
