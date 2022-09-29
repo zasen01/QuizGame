@@ -41,10 +41,12 @@ var i=0
 var time =40
 var score =0
 
+//Fuction to start the quiz once start button is clicked
 document.getElementById("start").onclick =  function(){
     showQuestions();
     showTime()};
 
+    //fuction for timer to count down to 0
 function showTime(){
     setInterval(function(){
         if(time>0){
@@ -55,7 +57,7 @@ function showTime(){
     }, 1000)
 }
 
-
+//funtionality to show questions by cycling though the array that holds them
 function showQuestions(){
 
     if(i<5 && time >0){
@@ -72,6 +74,7 @@ function showQuestions(){
     }
 }
 
+//adds questions to the screen and checks the answers 
 document.getElementById('questions').onclick= function(e){
     e.preventDefault();
     console.log(e.target.innerText);
